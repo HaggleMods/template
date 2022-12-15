@@ -1,8 +1,12 @@
 #include <sdk/SexySDK.hpp>
 #include <callbacks/callbacks.hpp>
+#include <MinHook.h>
 
 void init()
 {
+	MH_Initialize();
+
+
 	//Some useful callbacks
 	//Check out callbacks.hpp for more!
 
@@ -22,6 +26,8 @@ void init()
 	callbacks::on(callbacks::type::main_loop, []()
 	{
 	});
+
+	MH_EnableHook(MH_ALL_HOOKS);
 }
 
 DWORD WINAPI OnAttachImpl(LPVOID lpParameter)
