@@ -1,28 +1,45 @@
-#include <sdk/SexySDK.hpp>
+#include <sdk/SexySDK.hpp> //for deluxe
+#include <sdk/SexyNightsSDK.hpp> //for nights
 #include <MinHook.h>
 
 void init()
 {
 	MH_Initialize();
 
-
 	//Some useful callbacks
-	//Check out callbacks.hpp for more!
+	//Check out callbacks.hpp in the respective game's sdk for more!
 
-
-	callbacks::on(callbacks::type::begin_turn_2, []()
+	//Deluxe
+	Sexy::callbacks::on(Sexy::callbacks::type::begin_turn_2, []()
 	{
 	});
 
-	callbacks::on(callbacks::type::do_level_done, []()
+	Sexy::callbacks::on(Sexy::callbacks::type::do_level_done, []()
 	{
 	});
 
-	callbacks::on(callbacks::type::do_to_menu, []()
+	Sexy::callbacks::on(Sexy::callbacks::type::do_to_menu, []()
 	{
 	});
 
-	callbacks::on(callbacks::type::main_loop, []()
+	Sexy::callbacks::on(Sexy::callbacks::type::main_loop, []()
+	{
+	});
+
+	//Nights
+	SexyNights::callbacks::on(SexyNights::callbacks::type::begin_turn_2, []()
+	{
+	});
+
+	SexyNights::callbacks::on(SexyNights::callbacks::type::do_level_done, []()
+	{
+	});
+
+	SexyNights::callbacks::on(SexyNights::callbacks::type::do_to_menu, []()
+	{
+	});
+
+	SexyNights::callbacks::on(SexyNights::callbacks::type::main_loop, []()
 	{
 	});
 
