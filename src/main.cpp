@@ -1,5 +1,4 @@
 #include <sdk/SexySDK.hpp>
-#include <callbacks/callbacks.hpp>
 #include <MinHook.h>
 
 void init()
